@@ -1,0 +1,46 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    background-color: var(--elements-primary);
+    transition: background-color 0.2s ease;
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 3rem 8rem;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    color: var(--text-primary);
+}
+
+.mode-btn {
+    background-color: var(--elements-primary);
+    transition: background-color 0.2s ease;
+    color: var(--text-primary);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+}

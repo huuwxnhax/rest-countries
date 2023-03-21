@@ -1,0 +1,47 @@
+@import 'normalize.css';
+@import url('https://use.typekit.net/nko5fvg.css');
+
+:root {
+    --bg-primary: hsl(0, 0%, 98%);
+    --text-primary: hsl(200, 15%, 8%);
+    --elements-primary: hsl(0, 0%, 100%);
+    --font-size-primary: 1.2rem;
+    --font-size-secondary: 1.4rem;
+    --btn-lg: 12rem;
+
+    /* tablet */
+
+    --min-width-tablet-portrait: 768px;
+    --max-width-tablet-portrait: 1024px;
+    --min-width-tablet-landscape: 1024px;
+    --max-width-tablet-landscape: 1024px;
+    --max-width-tablet: 1024px;
+    --max-width-tablet: 1024px;
+}
+
+.dark:root {
+    --bg-primary: hsl(207, 26%, 17%);
+    --text-primary: hsl(0, 0%, 100%);
+    --elements-primary: hsl(209, 23%, 22%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: ibm-plex-sans, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizespeed;
+    background-color: var(--bg-primary);
+}
+
+a {
+    text-decoration: none;
+}

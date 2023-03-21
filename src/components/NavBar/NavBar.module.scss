@@ -1,0 +1,115 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 4rem 5rem;
+}
+
+.search {
+    position: relative;
+    color: var(--text-primary);
+    padding: 3rem;
+}
+
+.search-icon {
+    position: absolute;
+    font-size: 8rem;
+    top: 4.65rem;
+    left: 2rem;
+    width: 6rem;
+    height: 1.25rem;
+    fill: var(--text-primary);
+}
+
+.search-input {
+    background-color: var(--elements-primary);
+    transition: background-color 0.2s ease;
+    color: var(--text-primary) !important;
+    width: 20rem;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1.8rem;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-input::placeholder {
+    color: var(--text-primary) !important;
+    font-size: 1.2rem;
+    padding-left: 0.75rem;
+}
+
+.search-input:focus {
+    width: 30rem;
+}
+
+.filter {
+    background-color: var(--elements-primary);
+    width: 160px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    margin-right: 28px;
+}
+
+.dropdown-btn {
+    display: flex;
+    padding: 12px 16px;
+}
+
+.dropdown-btn:hover .dropdown-content {
+    display: block;
+}
+
+.icon {
+    margin-left: 14px;
+    fill: var(--text-primary);
+}
+
+.dropdown-toggle {
+    background-color: var(--elements-primary);
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    margin-top: 8px;
+    background-color: var(--elements-primary);
+    color: var(--text-primary);
+    border-radius: 5px;
+    width: var(--btn-lg);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.active {
+    display: block;
+}
+
+.dropdown-item li {
+    font-size: var(--font-size-secondary);
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdown-item li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
