@@ -3,30 +3,25 @@ import classNames from 'classnames/bind';
 import Header from '../../Header/Header';
 import NavBar from '../../NavBar/NavBar';
 import Content from '../../Content/Content';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchContentCountries } from '../../../redux/slice/contentSlice';
+import { fetchFilterRigion } from '../../../redux/slice/filtersSlice';
 
 const cx = classNames.bind(styles);
 
-function DefaultLayout({ children }) {
-    const [selectedRegion, setSelectedRegion] = useState('All');
-    const [search, setSearch] = useState('');
-
-    const handleSelected = (selectedRegion) => {
-        setSelectedRegion(selectedRegion);
-        console.log(selectedRegion);
-    };
-
-    const handleSearch = (search) => {
-        setSearch(search);
-        console.log(search);
-    };
+function DefaultLayout() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchContentCountries());
+    }, [dispatch]);
 
     return (
         <div className={cx('wrapper')}>
             <Header />
-            <NavBar onSelectedRegion={handleSelected} onChangeInput={handleSearch} />
+            <NavBar />
             <div className={cx('content')}>
-                <Content selectedRegion={selectedRegion} valueSearch={search} />
+                <Content />
             </div>
         </div>
     );

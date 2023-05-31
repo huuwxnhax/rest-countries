@@ -2,18 +2,23 @@ import classNames from 'classnames/bind';
 import styles from './NavBar.module.scss';
 import { AiOutlineSearch, AiOutlineArrowDown } from 'react-icons/ai';
 import { useState, useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import filtersSlice from '../../redux/slice/filtersSlice';
 
 const cx = classNames.bind(styles);
 
-function NavBar({ onSelectedRegion, onChangeInput }) {
+function NavBar() {
+    const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
     const [inputValue, setInputValue] = useState('');
 
     /*handle select inner text value dropdown */
     const handleSelected = (e) => {
-        const selectedRegion = e.target.innerText;
+        const region = e.target.innerText;
+        console.log(region);
         setIsOpen(false);
-        onSelectedRegion(selectedRegion);
+        dispatch(filtersSlice.actions.selectFiltersRegion(e.target.innerText));
     };
 
     /**
@@ -21,11 +26,12 @@ function NavBar({ onSelectedRegion, onChangeInput }) {
      */
     const handleGetValueInput = (e) => {
         const valueInput = e.target.value;
+        console.log(valueInput);
         setInputValue(valueInput);
+        dispatch(filtersSlice.actions.selectFiltersSearch(valueInput));
     };
 
     const handleSubmit = (e) => {
-        onChangeInput(inputValue);
         e.preventDefault();
         setInputValue('');
     };
